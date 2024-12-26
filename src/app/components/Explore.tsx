@@ -14,12 +14,19 @@ export default function ExploreSection() {
       </div>
 
       <div className="flex items-center h-full w-full sm:w-1/2">
-        <div className="bg-[#B4EA28] h-full w-1/4 sm:w-[16%] flex justify-center items-center cursor-pointer group relative overflow-hidden">
+        <div className=" bg-[#B4EA28] h-full w-1/4 sm:w-[16%] flex justify-center items-center cursor-pointer group relative overflow-hidden">
           <Play className="w-5 h-5 text-black group-hover:opacity-0 transition-opacity duration-300" />
 
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <video autoPlay loop muted className="w-full h-full object-cover">
-              <source src="/api/placeholder/400/320" type="video/mp4" />
+            <video
+              autoPlay
+              loop
+              muted
+              className="w-full h-full object-cover z-50">
+              <source
+                src="https://Grainient.b-cdn.net/Inspirux/new%20short.mp4"
+                type="video/mp4"
+              />
             </video>
           </div>
         </div>
