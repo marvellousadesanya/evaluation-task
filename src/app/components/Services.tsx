@@ -137,7 +137,9 @@ export default function Services() {
   };
 
   return (
-    <div ref={containerRef} className="bg-[#0F0F12] py-4 md:py-12 z-50">
+    <div
+      ref={containerRef}
+      className="bg-[#0F0F12] py-4 md:py-12 z-50 overflow-x-hidden">
       <div ref={worksSectionRef} className="">
         <div className="block lg:flex justify-between pl-4 md:pl-12 lg:gap-18 2xl:gap-80">
           <div className="w-full md:w-96 pt-12 uppercase lg:pin-this-too h-full text-white">

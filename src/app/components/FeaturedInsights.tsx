@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
 
 export default function FeaturedInsights() {
   return (
-    <section className="bg-[#D4D9D7] py-20 md:py-32">
+    <section className="bg-[#D4D9D7] py-20 md:py-32 overflow-x-hidden">
       <div className="block lg:flex gap-80 justify-between">
         <div className="w-full lg:max-w-96 text-sm pl-4 lg:px-12">
           <p>SOMETIMES WE WRITE, SOMETIME WE READ</p>

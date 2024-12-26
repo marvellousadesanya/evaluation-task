@@ -4,7 +4,7 @@ import { Play } from "lucide-react";
 export default function ExploreSection() {
   return (
     <section className="relative top-0 z-50 block sm:flex h-20 w-full uppercase text-sm bg-white">
-      <div className="bg-[#3B4EFF] px-4 h-full w-full sm:w-1/2 flex pl-12 items-center relative group cursor-pointer">
+      <div className="bg-[#3B4EFF] px-4 h-full w-full sm:w-1/2 flex lg:pl-12 items-center relative group cursor-pointer">
         <p className="text-white text-xs">
           <span className="relative">
             Explore Works
