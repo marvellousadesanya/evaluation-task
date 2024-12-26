@@ -3,13 +3,12 @@
 import React from "react";
 import gsap from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/all";
-import { SplitText } from "gsap-trial/all";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import Image from "next/image";
 import { services } from "@/dummyData/services";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
   const containerRef = useRef(null);
