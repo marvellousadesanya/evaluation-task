@@ -8,11 +8,11 @@ export default function ExploreSection() {
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    let timer;
+    let timer: NodeJS.Timeout;
     if (isVideoOpen) {
       timer = setTimeout(() => {
         setShowVideo(true);
-      }, 1200); // Match the 1.2s duration from your Hero component
+      }, 1200);
     } else {
       setShowVideo(false);
     }
