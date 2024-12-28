@@ -4,7 +4,7 @@ import React from "react";
 import gsap from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/all";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { services } from "@/dummyData/services";
 
@@ -17,6 +17,20 @@ export default function Services() {
   const [activeServiceId, setActiveServiceId] = React.useState<string | null>(
     null
   );
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // useGSAP(() => {
   //   gsap.from(".pin-this", {
@@ -139,10 +153,13 @@ export default function Services() {
   return (
     <div
       ref={containerRef}
-      className="bg-[#0F0F12] py-4 md:py-12 z-50 overflow-x-hidden">
+      className="relative bg-[#0F0F12] py-4 md:py-12 z-50 overflow-x-hidden">
       <div ref={worksSectionRef} className="">
         <div className="block lg:flex justify-between pl-4 md:pl-12 lg:gap-18 2xl:gap-80">
-          <div className="w-full md:w-96 pt-12 uppercase lg:pin-this-too h-full text-white">
+          <div
+            className={`w-full md:w-96 pt-12 uppercase pin-this-too h-full text-white ${
+              isMobile ? "" : "pinning-this"
+            } `}>
             <p className="text-xs md:text-sm text-[#939393]">
               Strategy
               <br /> design

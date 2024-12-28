@@ -109,7 +109,7 @@ export default function Works() {
   return (
     <div
       ref={containerRef}
-      className="bg-white h-full pt-32 md:pt-64 z-50 overflow-x-hidden">
+      className="relative bg-white h-full pt-32 md:pt-64 z-50 overflow-x-hidden">
       <div className="p-4 md:p-12 uppercase overflow-hidden h-full sm:">
         <p className="selected-text text-4xl sm:text-7xl 2xl:text-[17.5rem] 2xl:leading-0 leading-none md:leading-none text-center">
           Selected

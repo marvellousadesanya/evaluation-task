@@ -138,7 +138,7 @@ export default function Results() {
   return (
     <div
       ref={containerRef}
-      className="bg-white pt-12 lg:pt-24 z-50 overflow-x-hidden">
+      className="relative bg-white pt-12 lg:pt-24 z-50 overflow-x-hidden">
       <div ref={worksSectionRef} className=" h-full">
         <div
           ref={recordsSectionRef}

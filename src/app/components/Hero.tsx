@@ -123,21 +123,21 @@ export default function Hero() {
       <div
         ref={loaderRef}
         className="fixed inset-0 z-50 flex items-center justify-center bg-[#0F0F12]">
-        <p className="text-white absolute top-[5%] left-3 text-5xl md:text-8xl  font-[ppmori-regular]">
+        <p className="text-white absolute top-[5%] left-3 text-5xl md:text-5xl  font-[ppmori-regular]">
           Meta4 is loading
         </p>
         <span
           ref={counterRef}
-          className="text-5xl md:text-8xl font-[ppmori-regular] text-white absolute bottom-4 right-5">
+          className="text-5xl md:text-9xl font-[ppmori-regular] text-white absolute bottom-4 font-semibold right-5">
           0%
         </span>
       </div>
 
-      <main className="sticky top-0 -z-[-5]">
+      <main className="sticky top-0 -z-10">
         <div className="w-full h-[calc(100vh-40vh)] md:h-[calc(100vh-15vh)] flex flex-col justify-between bg-black bg-[url('/img/hero_bg_try.webp')] bg-cover bg-center bg-no-repeat">
           <div
             ref={overlayRef}
-            className="absolute inset-0 h-full bg-[#B4EA28] z-50"
+            className="fixed inset-0 h-screen bg-[#B4EA28] z-50"
           />
 
           <div className="relative px-4 sm:px-12 pt-[20vh] sm:pt-[50vh] lg:pt-[30vh]  2xl:pt-[39vh] 3xl:  pb-0">
@@ -180,8 +180,8 @@ export default function Hero() {
               ref={textRef}
               className="text-white text-sm sm:text-base md:text-lg
             pt-20 w-full mt-8 lg:mt-0 
-             lg:absolute lg:right-48 2xl:right-[36rem] lg:top-[26rem]
-             max-w-md sm:max-w-[400px] md:max-w-[440px] lg:max-w-80">
+             lg:absolute lg:right-40 2xl:right-[30rem] lg:top-[26rem]
+             max-w-md sm:max-w-[400px] md:max-w-[440px] lg:max-w-72">
               Inspirux is a strategic design company giving global brands an
               edge
             </p>

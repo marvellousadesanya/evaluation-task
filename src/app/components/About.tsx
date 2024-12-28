@@ -63,11 +63,11 @@ export default function About() {
   return (
     <section
       ref={containerRef}
-      className="px-4 md:px-12 pt-32 lg:pt-32 h-full overflow-hidden z-50 bg-white">
+      className="relative px-4 md:px-12 pt-32 lg:pt-32 h-full overflow-hidden z-50 bg-white">
       <div className="block space-y-6 lg:space-y-0 lg:flex gap-24 justify-between">
         <div
           className={`w-full sm:max-w-xs h-full ${
-            isMobile ? "pinning-this" : ""
+            isMobile ? "" : "pinning-this"
           }`}>
           <p className="uppercase text-sm md:text-base">
             We believe in the power of design and its ability to define and

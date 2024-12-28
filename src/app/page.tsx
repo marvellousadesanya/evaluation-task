@@ -11,21 +11,21 @@ import HiddenDisplay from "./components/HiddenDisplay";
 
 export default function Home() {
   return (
-    <div className="relative font-[ppmori-regular] w-screen ">
+    <div className=" font-[ppmori-regular] w-screen ">
       <NavBar />
-      <div className="relative">
-        <Hero />
-        <div className="relative z-10">
-          <ExploreSection />
-          <About />
-          <Works />
-          <Services />
-          <Results />
-          <FeaturedInsights />
-          <Footer />
-          <HiddenDisplay />
-        </div>
+      {/* <div className="relative"> */}
+      <Hero />
+      <div className="relative ">
+        <ExploreSection />
+        <About />
+        <Works />
+        <Services />
+        <Results />
+        <FeaturedInsights />
+        <Footer />
+        <HiddenDisplay />
       </div>
+      {/* </div> */}
     </div>
   );
 }
