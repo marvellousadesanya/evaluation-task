@@ -124,8 +124,8 @@ export default function Hero() {
     <>
       <div
         ref={loaderRef}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-[#0F0F12]">
-        <p className="text-white absolute top-[5%] left-3  text-xl md:text-5xl font-[ppmori-regular]">
+        className="fixed inset-0 z-[5000] flex items-center justify-center bg-[#0F0F12] h-screen">
+        <p className="text-white absolute top-[5%] left-3 text-xl md:text-5xl font-[ppmori-regular]">
           Meta4 is loading
         </p>
         <span
