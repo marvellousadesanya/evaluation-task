@@ -18,7 +18,7 @@ export default function Works() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (cursorRef.current) {
         setCursorPosition({ x: e.clientX, y: e.clientY });
 
@@ -162,10 +162,10 @@ export default function Works() {
     <>
       <div
         ref={cursorRef}
-        className="fixed pointer-events-none z-[100] w-96 h-48 opacity-0 bg-transparent flex justify-center items-center"
+        className="fixed pointer-events-none z-[100] w-96 h-56 opacity-0 bg-transparent flex justify-center items-center"
         style={{
-          left: "-10%",
-          top: "-10%",
+          left: "0",
+          top: "0",
           transform: `translate(-50%, -50%) translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
           willChange: "transform",
         }}>
