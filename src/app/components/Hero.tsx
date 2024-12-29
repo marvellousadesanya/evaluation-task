@@ -5,7 +5,9 @@ import { ScrollTrigger } from "gsap-trial/all";
 import { useGSAP } from "@gsap/react";
 import { useRef, useEffect, useState } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function Hero() {
   const headingRef = useRef<HTMLHeadingElement>(null);

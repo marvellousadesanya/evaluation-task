@@ -8,7 +8,9 @@ import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { services } from "@/dummyData/services";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function Services() {
   const containerRef = useRef(null);

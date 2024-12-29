@@ -35,6 +35,7 @@ export default function FeaturedInsights() {
             <div className="group">
               <div className="w-[90%] relative overflow-hidden">
                 <div className="w-full aspect-video">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/img/insights-image.jpg"
                     alt="Insights image"

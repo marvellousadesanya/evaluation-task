@@ -6,7 +6,9 @@ import { ScrollTrigger } from "gsap-trial/all";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState, useEffect } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function About() {
   const containerRef = useRef(null);

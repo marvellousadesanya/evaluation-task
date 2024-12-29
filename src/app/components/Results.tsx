@@ -7,7 +7,9 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function Results() {
   const containerRef = useRef(null);
@@ -58,7 +60,6 @@ export default function Results() {
   }, []);
 
   useGSAP(() => {
-    // Selected Works animation
     const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -103,7 +104,6 @@ export default function Results() {
       }
     );
 
-    // Project items animation
     const projectItems = gsap.utils.toArray(".project-itemss");
     projectItems.forEach((item) => {
       gsap.fromTo(

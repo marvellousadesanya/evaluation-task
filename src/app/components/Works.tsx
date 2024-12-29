@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import gsap from "gsap-trial";
-// import { ScrollTrigger } from "gsap-trial/all";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import Image from "next/image";
@@ -44,7 +43,7 @@ export default function Works() {
   }, []);
 
   useGSAP(() => {
-    // Animation distance based on screen size
+    // For responsiveness
     const distance = isMobile ? "70vw" : "100vw";
 
     const tl = gsap.timeline({
