@@ -26,8 +26,8 @@ export default function ExploreSection() {
 
   return (
     <>
-      <section className="relative top-0 z-10 block sm:flex h-20 w-full uppercase text-sm bg-white">
-        <div className="bg-[#3B4EFF] px-4 h-full w-full sm:w-1/2 flex lg:pl-12 items-center relative group cursor-pointer">
+      <section className="relative top-0 z-10 flex flex-col sm:flex-row h-auto sm:h-20 w-full uppercase text-sm bg-white">
+        <div className="bg-[#3B4EFF] px-4 h-20 sm:h-full w-full sm:w-1/2 flex lg:pl-12 items-center relative group cursor-pointer">
           <p className="text-white text-xs">
             <span className="relative">
               Explore Works
@@ -36,10 +36,10 @@ export default function ExploreSection() {
           </p>
         </div>
 
-        <div className="flex items-center h-full w-full sm:w-1/2">
+        <div className="flex items-center h-20 sm:h-full w-full sm:w-1/2">
           <div
             onClick={() => setIsVideoOpen(true)}
-            className="bg-[#B4EA28] h-full w-1/4 sm:w-[16%] flex justify-center items-center cursor-pointer group relative overflow-hidden">
+            className="bg-[#B4EA28] h-full w-[20%] sm:w-[16%] flex justify-center items-center cursor-pointer group relative overflow-hidden">
             <Play className="w-5 h-5 text-black group-hover:opacity-0 transition-opacity duration-300" />
 
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -56,9 +56,9 @@ export default function ExploreSection() {
             </div>
           </div>
 
-          <div className="text-black flex justify-between h-full w-3/4 sm:w-[84%] px-6 sm:px-12 bg-[#EEEEEE] items-center">
-            <p className="text-xs sm:text-base">Play reel</p>
-            <p className="text-xs sm:text-base">Scroll down</p>
+          <div className="text-black flex justify-between h-full w-[80%] sm:w-[84%] px-4 lg:px-6 xl:px-12 bg-[#EEEEEE]  items-center">
+            <p className="text-xs lg:text-base">Play reel</p>
+            <p className="text-xs lg:text-base">Scroll down</p>
           </div>
         </div>
       </section>

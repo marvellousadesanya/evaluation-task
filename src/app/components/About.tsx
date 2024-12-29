@@ -17,7 +17,7 @@ export default function About() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth <= 640);
     };
 
     checkMobile();
@@ -42,25 +42,25 @@ export default function About() {
   });
 
   useGSAP(() => {
-    // if (!isMobile) {
-    const pinnedText = gsap.to(".pinning-this", {
-      y: -50,
-      opacity: 0.8,
-      duration: 1,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        pin: ".pinning-this",
-        pinSpacing: true,
-        scrub: 1,
-        toggleActions: "play none none reverse",
-      },
-    });
+    if (!isMobile) {
+      const pinnedText = gsap.to(".pinning-this", {
+        y: -50,
+        opacity: 0.8,
+        duration: 1,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          pin: ".pinning-this",
+          pinSpacing: false,
+          scrub: 1,
+          toggleActions: "play none none reverse",
+        },
+      });
 
-    return () => {
-      pinnedText.kill();
-    };
-    // }
-  }, []);
+      return () => {
+        pinnedText.kill();
+      };
+    }
+  }, [isMobile]);
 
   return (
     <section
@@ -71,13 +71,13 @@ export default function About() {
           className={`w-full sm:max-w-xs h-full ${
             isMobile ? "" : "pinning-this"
           }`}>
-          <p className="uppercase text-sm md:text-base">
+          <p className="uppercase text-xs md:text-base">
             We believe in the power of design and its ability to define and
             transform brands
           </p>
         </div>
 
-        <div className="text-sm lg:text-lg 2xl:text-5xl overflow-hidden w-full md:max-w-[1399px] h-full">
+        <div className="text-sm sm:text-lg 2xl:text-5xl overflow-hidden w-full md:max-w-[1399px] h-full">
           <p className="leading-14 md:about-text">
             –– It{"'"}s our commitment to excellence that distinguises us. We
             are passionate about creating visually stunning and user-friendly

@@ -125,7 +125,7 @@ export default function Hero() {
       <div
         ref={loaderRef}
         className="fixed inset-0 z-50 flex items-center justify-center bg-[#0F0F12]">
-        <p className="text-white absolute top-[5%] left-3 text-5xl md:text-5xl  font-[ppmori-regular]">
+        <p className="text-white absolute top-[5%] left-3  text-xl md:text-5xl font-[ppmori-regular]">
           Meta4 is loading
         </p>
         <span
@@ -136,13 +136,13 @@ export default function Hero() {
       </div>
 
       <main className="sticky top-0 -z-10">
-        <div className="w-full h-[calc(100vh-40vh)] md:h-[calc(100vh-15vh)] flex flex-col justify-between bg-black bg-[url('/img/hero_bg_try.webp')] bg-cover bg-center bg-no-repeat">
+        <div className="w-full h-[calc(100vh-40vh)] sm:h-[calc(100vh-13vh)] flex flex-col justify-between bg-black bg-[url('/img/hero_bg_try.webp')] bg-cover bg-center bg-no-repeat">
           <div
             ref={overlayRef}
             className="fixed inset-0 h-screen bg-[#B4EA28] z-50"
           />
 
-          <div className="relative px-4 sm:px-12 pt-[20vh] sm:pt-[50vh] lg:pt-[30vh]  2xl:pt-[39vh] 3xl:  pb-0">
+          <div className="relative px-4 sm:px-12 pt-[23vh] sm:pt-[50vh] lg:pt-[40vh] xl:pt-[35vh] 2xl:pt-[39vh]  pb-0">
             <h1
               ref={headingRef}
               className="
@@ -150,23 +150,23 @@ export default function Hero() {
             text-4xl     
             sm:text-5xl  
             md:text-6xl  
-            lg:text-7xl  
-            xl:text-8xl  
+            lg:text-8xl  
+            xl:text-9xl  
             2xl:text-[10rem] 
             leading-tight
             sm:leading-tight
             md:leading-tight
             lg:leading-snug
-            xl:leading-normal
+            xl:leading-tight
             2xl:leading-[10rem]
             
             w-full
             sm:w-[95%]
             md:w-[92%]
             lg:w-[90%]
-            xl:w-[85%]
-            2xl:w-[85%]
-            min-[1850px]:w-[75%]
+            xl:w-[75%]
+            2xl:w-[80%]
+            min-[1850px]:w-[70%]
             
             wobble-text 
             font-[ppmori-regular] 
@@ -180,10 +180,10 @@ export default function Hero() {
 
             <p
               ref={textRef}
-              className="text-white text-sm sm:text-base md:text-lg
+              className="text-white py-5 xl:py-0 text-sm sm:text-base md:text-lg
             pt-20 w-full mt-8 lg:mt-0 
-             lg:absolute lg:right-40 2xl:right-[30rem] lg:top-[26rem]
-             max-w-md sm:max-w-[400px] md:max-w-[440px] lg:max-w-72">
+             xl:absolute xl:right-40 2xl:right-[30rem] lg:top-[26rem] xl:top-[30rem]
+             max-w-[600px] sm:max-w-[400px] md:max-w-[440px] xl:max-w-72">
               Inspirux is a strategic design company giving global brands an
               edge
             </p>

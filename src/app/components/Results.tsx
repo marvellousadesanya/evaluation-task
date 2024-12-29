@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import gsap from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/all";
 import { useGSAP } from "@gsap/react";
@@ -17,47 +17,65 @@ export default function Results() {
   const recordsSectionRef = useRef(null);
   const clientsSectionRef = useRef(null);
 
-  useGSAP(() => {
-    const pinnedText = gsap.to(".pin-this-tooss", {
-      // y: -50,
-      opacity: 0.8,
-      duration: 1,
+  const [isMobile, setIsMobile] = useState(false);
 
-      scrollTrigger: {
-        trigger: recordsSectionRef.current,
-
-        pin: ".pin-this-tooss",
-        pinSpacing: true,
-        scrub: 1,
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    return () => {
-      pinnedText.kill();
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 640);
     };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useGSAP(() => {
-    const pinnedText = gsap.to(".pin-this-too2", {
-      // y: -50,
-      opacity: 0.8,
-      duration: 1,
+    if (!isMobile) {
+      const pinnedText = gsap.to(".pin-this-tooss", {
+        // y: -50,
+        opacity: 0.8,
+        duration: 1,
 
-      scrollTrigger: {
-        trigger: clientsSectionRef.current,
+        scrollTrigger: {
+          trigger: recordsSectionRef.current,
 
-        pin: ".pin-this-too2",
-        pinSpacing: true,
-        scrub: 1,
-        toggleActions: "play none none reverse",
-      },
-    });
+          pin: ".pin-this-tooss",
+          pinSpacing: true,
+          scrub: 1,
+          toggleActions: "play none none reverse",
+        },
+      });
 
-    return () => {
-      pinnedText.kill();
-    };
-  }, []);
+      return () => {
+        pinnedText.kill();
+      };
+    }
+  }, [isMobile]);
+
+  useGSAP(() => {
+    if (!isMobile) {
+      const pinnedText = gsap.to(".pin-this-too2", {
+        // y: -50,
+        opacity: 0.8,
+        duration: 1,
+
+        scrollTrigger: {
+          trigger: clientsSectionRef.current,
+
+          pin: ".pin-this-too2",
+          pinSpacing: true,
+          scrub: 1,
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      return () => {
+        pinnedText.kill();
+      };
+    }
+  }, [isMobile]);
 
   useGSAP(() => {
     const tl1 = gsap.timeline({
@@ -143,7 +161,7 @@ export default function Results() {
         <div
           ref={recordsSectionRef}
           className="block lg:flex h-full  justify-between py-12 gap-12">
-          <div className="w-full  md:w-96 pt-2 md:pt-12 h-full px-4 md:px-12 uppercase md:pin-this-tooss text-black ">
+          <div className="w-full  md:w-96 pt-2 md:pt-12 h-full px-4 md:px-12 uppercase pin-this-tooss text-black ">
             <p className="text-sm ">
               WE HAVE DRIVEN RESULTS FOR OVER 100+ STARTUP BUSINESSES IN THE
               PAST 07 YEARS OF TEAM EXPERIENCE
@@ -161,7 +179,7 @@ export default function Results() {
             </div>
 
             <div className="project-itemss border-b uppercase text-black border-black py-12 flex justify-between items-center pr-12 cursor-pointer group">
-              <div className="block space-y-5 sm:space-y-0 pl-5 lg:pl-0 md:flex gap-12">
+              <div className="block space-y-5 sm:space-y-0 pl-5 lg:pl-0 sm:flex gap-12">
                 <div>
                   <p className="text-4xl sm:text-6xl lg:text-8xl text-black font-semibold">
                     13
@@ -184,7 +202,7 @@ export default function Results() {
             </div>
 
             <div className="project-itemss uppercase border-b  text-black border-black py-12 flex justify-between items-center pr-12 cursor-pointer group">
-              <div className="block space-y-5 sm:space-y-0 pl-5 sm:pl-5 md:flex gap-12">
+              <div className="block space-y-5 sm:space-y-0 pl-5 sm:pl-5 sm:flex gap-12">
                 <div>
                   <p className="text-4xl sm:text-6xl lg:text-8xl text-black font-semibold">
                     $10M+
@@ -213,7 +231,7 @@ export default function Results() {
         <div
           ref={clientsSectionRef}
           className="block lg:flex h-full justify-between  gap-12 ">
-          <div className="w-full sm:w-96 pt-12 h-full px-4 lg:px-12 uppercase lg:pin-this-too2 text-black">
+          <div className="w-full sm:w-96 pt-12 h-full px-4 lg:px-12 uppercase pin-this-too2 text-black">
             <p className="text-sm">
               OUR TRACK RECORD OF TRUSTED PARTNERS AND CLIENTS.
             </p>

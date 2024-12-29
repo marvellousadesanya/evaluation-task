@@ -15,7 +15,7 @@ export default function Home() {
       <NavBar />
       {/* <div className="relative"> */}
       <Hero />
-      <div className="relative ">
+      <div className="relative w-screen overflow-hidden">
         <ExploreSection />
         <About />
         <Works />

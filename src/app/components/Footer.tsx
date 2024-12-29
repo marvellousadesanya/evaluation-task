@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="relative z-50 bg-[#0F0F12] pl-4 pt-12 lg:p-12">
+    <footer className="relative z-50 bg-[#0F0F12] pl-4 pt-12 lg:p-12 w-screen">
       <div className="block space-y-5 lg:space-y-0 lg:flex justify-between">
         <div>
           <div className="uppercase text-white text-xs sm:text-sm">

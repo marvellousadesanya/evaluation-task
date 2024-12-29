@@ -14,7 +14,7 @@ export default function Works() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth <= 460);
     };
 
     checkMobile();
@@ -131,7 +131,10 @@ export default function Works() {
 
       <div ref={worksSectionRef} className="border-t border-black h-full">
         <div className="block lg:flex flex-col lg:flex-row justify-between lg:pl-12 gap-8 lg:gap-18 2xl:gap-80">
-          <div className="w-full lg:w-96 p-4 md:pt-12 h-full uppercase lg:pin-this">
+          <div
+            className={`w-full lg:w-96 p-4 md:pt-12 h-full uppercase ${
+              isMobile ? "" : "pin-this"
+            } `}>
             <p className="text-sm">
               Simplicity and clarity are your guiding principles, from start to
               finish - from design to product development.
