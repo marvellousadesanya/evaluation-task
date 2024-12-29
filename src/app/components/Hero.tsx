@@ -174,7 +174,7 @@ export default function Hero() {
               Where ideas
               <span className="text-white block lg:inline">
                 {" "}
-                races to victory!
+                race to victory!
               </span>
             </h1>
 
