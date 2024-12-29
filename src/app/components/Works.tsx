@@ -66,7 +66,6 @@ export default function Works() {
   }, []);
 
   useGSAP(() => {
-    // For responsiveness
     const distance = isMobile ? "70vw" : "100vw";
 
     const tl = gsap.timeline({
@@ -130,11 +129,9 @@ export default function Works() {
 
   const handleProjectHover = (project: Project, isEntering: boolean) => {
     if (isEntering) {
-      // Set the new cursor image and activate cursor
       setCursorImage(project.cursorImage);
       setActiveCursor(true);
 
-      // Animate cursor appearance
       gsap.to(cursorRef.current, {
         scale: 1,
         opacity: 1,
@@ -144,7 +141,6 @@ export default function Works() {
         overwrite: true,
       });
     } else {
-      // Animate cursor disappearance
       gsap.to(cursorRef.current, {
         scale: 0,
         opacity: 0,
